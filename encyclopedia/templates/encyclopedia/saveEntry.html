@@ -7,7 +7,7 @@
 {% block body %}
     <h1>Save New Entry</h1>
 
-    <form>
+    <form action="{% url 'saveEntry' %} " method="POST">
         {% csrf_token %}
         <input placeholder="Title of the page" id="titleInput" type="text" name="title"> <br>
         <textarea placeholder="Write page content in markdown" id="textArea" name="content"></textarea>

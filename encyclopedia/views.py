@@ -47,4 +47,8 @@ def history(request):
 
 
 def saveEntry(request):
+    if request.method == "POST":
+        title = request.POST.get("title")
+        content = request.POST.get("content")
+        util.save_entry(title,content)
     return render(request, "encyclopedia/saveEntry.html", {})
