@@ -52,11 +52,29 @@ def saveEntry(request):
         content = request.POST.get("content")
         if title == "" or content == "":
             return render(request, "encyclopedia/saveEntry.html", {
-                "message": "Can't save with empty fields."
+                "message": "Can't save with empty fields.",
+                "title": title,
+                "content": content
             })
         if title in util.list_entries():
             return render(request, "encyclopedia/saveEntry.html", {
-                "message": "Title already exists."
+                "message": "Title already exists.",
+                "title": title,
+                "content": content
+            })
+        util.save_entry(title, content)
+    return render(request, "encyclopedia/saveEntry.html", {
+        "message": "Entry save successful"
+    })
+
+
+def editEntry(request):
+    if request.method == "POST":
+        title = request.POST.get("title")
+        content = request.POST.get("content")
+        if content == "":
+            return render(request, "encyclopedia/saveEntry.html", {
+                "message": "Can't save with empty field."
             })
         util.save_entry(title, content)
     return render(request, "encyclopedia/saveEntry.html", {})

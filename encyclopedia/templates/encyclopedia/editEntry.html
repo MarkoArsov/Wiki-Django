@@ -1,0 +1,21 @@
+{% extends "encyclopedia/layout.html" %}
+
+{% block title %}
+    Encyclopedia
+{% endblock %}
+
+{% block body %}
+    <h1>Edit Entry</h1>
+    {% if message %}
+        <div id="redAlert" class="alert alert-danger">{{ message }}</div>
+    {% endif %}
+
+    <form action="{% url 'saveEntry' %} " method="POST">
+        {% csrf_token %}
+        <input disabled="disabled" id="titleInput" type="text" name="title"> <br>
+        <textarea placeholder="Write page content in markdown" id="textArea" name="content"></textarea>
+        <br>
+        <input id="submitButton" type="submit">
+    </form>
+
+{% endblock %}
