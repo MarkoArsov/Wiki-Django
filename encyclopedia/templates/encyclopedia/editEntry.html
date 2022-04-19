@@ -10,7 +10,7 @@
         <div id="redAlert" class="alert alert-danger">{{ message }}</div>
     {% endif %}
 
-    <form action="{% url 'editEntry' title %} " method="POST">
+    <form action="{% url 'editEntry'  title%} " method="POST">
         {% csrf_token %}
         <input
                 {% if title %}
