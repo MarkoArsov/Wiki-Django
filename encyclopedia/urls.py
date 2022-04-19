@@ -8,5 +8,5 @@ urlpatterns = [
     path("search", views.search, name="search"),
     path("history", views.history, name="history"),
     path("saveEntry", views.saveEntry, name="saveEntry"),
-    path("editEntry", views.editEntry, name="editEntry")
+    path("editEntry/<title>", views.editEntry, name="editEntry")
 ]

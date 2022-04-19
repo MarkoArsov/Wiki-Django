@@ -63,18 +63,23 @@ def saveEntry(request):
                 "content": content
             })
         util.save_entry(title, content)
-    return render(request, "encyclopedia/saveEntry.html", {
-        "message": "Entry save successful"
-    })
+    return render(request, "encyclopedia/saveEntry.html", {})
 
 
-def editEntry(request):
+def editEntry(request, title):
+    content = util.get_entry(title)
     if request.method == "POST":
-        title = request.POST.get("title")
         content = request.POST.get("content")
+        title = request.POST.get("title")
         if content == "":
-            return render(request, "encyclopedia/saveEntry.html", {
-                "message": "Can't save with empty field."
+            return render(request, "encyclopedia/editEntry.html", {
+                "message": "Can't save with empty field.",
+                "title": title,
+                "content": content
             })
         util.save_entry(title, content)
-    return render(request, "encyclopedia/saveEntry.html", {})
+
+    return render(request, "encyclopedia/editEntry.html", {
+        "title": title,
+        "content": content
+    })

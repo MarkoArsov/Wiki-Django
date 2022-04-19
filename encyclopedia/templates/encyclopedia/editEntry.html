@@ -10,10 +10,14 @@
         <div id="redAlert" class="alert alert-danger">{{ message }}</div>
     {% endif %}
 
-    <form action="{% url 'saveEntry' %} " method="POST">
+    <form action="{% url 'editEntry' title %} " method="POST">
         {% csrf_token %}
-        <input disabled="disabled" id="titleInput" type="text" name="title"> <br>
-        <textarea placeholder="Write page content in markdown" id="textArea" name="content"></textarea>
+        <input
+                {% if title %}
+                value="{{ title }}"
+                {% endif %}
+               id="titleInput" type="text" name="title"> <br>
+        <textarea placeholder="Write page content in markdown" id="textArea" name="content">{% if content %}{{ content }}{% endif %}</textarea>
         <br>
         <input id="submitButton" type="submit">
     </form>

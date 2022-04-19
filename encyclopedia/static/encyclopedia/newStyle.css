@@ -95,6 +95,11 @@ textarea {
 }
 
 #redAlert{
-    margin: 20px 20px 20px 40px;
+    margin: 20px 20px 0px 40px;
     width: 80%;
+}
+
+hr{
+    margin-right: 30px;
+    border-top: #424549 solid 1px;
 }
