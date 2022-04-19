@@ -1,0 +1,62 @@
+{% load static %}
+
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <title>{% block title %}{% endblock %}</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+          integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link href="{% static 'encyclopedia/stylesheet.css' %}" rel="stylesheet">
+</head>
+<script>
+    function redirectHome() {
+        location.href = "{% url 'index' %}"
+    }
+
+    function redirectAllPages() {
+        location.href = "{% url 'index' %}"
+    }
+
+    function redirectHistory(){
+        location.href = "{% url 'history' %}"
+    }
+
+    function redirectSaveEntry(){
+        location.href = "{% url 'saveEntry' %}"
+    }
+</script>
+<body>
+<div class="row">
+    <div id="nav" class="sidebar col-lg-2 col-md-3">
+        <h2 id="title">Wiki Clone</h2>
+        <form class="searchForm" action="{% url 'search' %}">
+            <input class="search" type="text" name="q" placeholder="Search Wiki">
+        </form>
+        <div onclick="redirectHome()" class="navButton">
+            Home
+        </div>
+        <div onclick="redirectAllPages()" class="navButton">
+            All Pages
+        </div>
+        <div onclick="redirectSaveEntry()" class="navButton">
+            Create New Page
+        </div>
+        <div class="navButton">
+            Random Page
+        </div>
+        <div onclick="redirectHistory()" class="navButton">
+            History
+        </div>
+        {% block nav %}
+        {% endblock %}
+    </div>
+
+    <div class="main col-lg-10 col-md-9">
+        {% block body %}
+        {% endblock %}
+    </div>
+</div>
+
+</body>
+</html>
