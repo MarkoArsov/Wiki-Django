@@ -84,7 +84,7 @@ textarea {
     color: #424549;
     background-color: white;
     font-size: 23px;
-     padding: 10px;
+    padding: 10px;
 
 }
 
@@ -92,4 +92,9 @@ textarea {
     border: 2px white solid;
     color: white;
     background-color: #424549;
+}
+
+#redAlert{
+    margin: 20px 20px 20px 40px;
+    width: 80%;
 }

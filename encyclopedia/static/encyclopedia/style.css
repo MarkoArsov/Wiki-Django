@@ -1,6 +1,7 @@
 body {
     margin: 0;
     background-color: white;
+    overflow-x: hidden;
 }
 
 code {
@@ -54,7 +55,46 @@ textarea {
 }
 
 .navButton:hover {
-    background-color: blue;
+    background-color: white;
     color: #424549;
     cursor: pointer;
+}
+
+#titleInput {
+    display: inline-block;
+    margin: 20px 20px 20px 40px;
+    width: 80%;
+    border: 2px #424549 solid;
+    font-size: 23px;
+    padding: 10px;
+}
+
+#textArea {
+    height: 50vh;
+    margin-left: 40px;
+    width: 80%;
+    border: 2px #424549 solid;
+    padding: 10px;
+}
+
+#submitButton {
+    width: 80%;
+    margin: 20px 20px 20px 40px;
+    border: 2px #424549 solid;
+    color: #424549;
+    background-color: white;
+    font-size: 23px;
+    padding: 10px;
+
+}
+
+#submitButton:hover {
+    border: 2px white solid;
+    color: white;
+    background-color: #424549;
+}
+
+#redAlert{
+    margin: 20px 20px 0px 40px;
+    width: 80%;
 }

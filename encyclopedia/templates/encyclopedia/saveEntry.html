@@ -6,6 +6,9 @@
 
 {% block body %}
     <h1>Save New Entry</h1>
+    {% if message %}
+        <div id="redAlert" class="alert alert-danger">{{ message }}</div>
+    {% endif %}
 
     <form action="{% url 'saveEntry' %} " method="POST">
         {% csrf_token %}

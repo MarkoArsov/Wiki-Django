@@ -50,5 +50,13 @@ def saveEntry(request):
     if request.method == "POST":
         title = request.POST.get("title")
         content = request.POST.get("content")
-        util.save_entry(title,content)
+        if title == "" or content == "":
+            return render(request, "encyclopedia/saveEntry.html", {
+                "message": "Can't save with empty fields."
+            })
+        if title in util.list_entries():
+            return render(request, "encyclopedia/saveEntry.html", {
+                "message": "Title already exists."
+            })
+        util.save_entry(title, content)
     return render(request, "encyclopedia/saveEntry.html", {})
