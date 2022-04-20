@@ -9,4 +9,6 @@
     {{ content | safe }}
     <hr>
     <a href="{% url 'editEntry'  name %}">EDIT ENTRY</a>
+    <br>
+    <a href="{% url 'deletePage'  name %}">DELETE ENTRY</a>
 {% endblock %}
