@@ -89,7 +89,7 @@ textarea {
 }
 
 #submitButton:hover {
-    border: 2px white solid;
+    border: 2px #424549 solid;
     color: white;
     background-color: #424549;
 }
