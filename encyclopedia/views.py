@@ -63,6 +63,7 @@ def saveEntry(request):
                 "content": content
             })
         util.save_entry(title, content)
+        return entry(request, title)
     return render(request, "encyclopedia/saveEntry.html", {})
 
 
@@ -78,7 +79,7 @@ def editEntry(request, title):
                 "content": content
             })
         util.save_entry(title, content)
-
+        return entry(request, title)
     return render(request, "encyclopedia/editEntry.html", {
         "title": title,
         "content": content
