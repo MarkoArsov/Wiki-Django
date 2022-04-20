@@ -26,9 +26,10 @@
         location.href = "{% url 'saveEntry' %}"
     }
 
-    function editPage(name){
-
+    function randomPage(){
+        location.href = "{% url 'randomPage' %}"
     }
+
 </script>
 <body>
 <div class="row">
@@ -46,7 +47,7 @@
         <div onclick="redirectSaveEntry()" class="navButton">
             Create New Page
         </div>
-        <div class="navButton">
+        <div onclick="randomPage()" class="navButton">
             Random Page
         </div>
         <div onclick="redirectHistory()" class="navButton">

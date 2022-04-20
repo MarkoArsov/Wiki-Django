@@ -1,6 +1,7 @@
 from django.shortcuts import render, redirect
 from . import util
 from markdown2 import markdown
+from random import randint
 
 
 def index(request):
@@ -91,3 +92,10 @@ def deletePage(request, title):
     return render(request, "encyclopedia/delete.html", {
         "title": title
     })
+
+
+def randomPage(request):
+    pages = util.list_entries()
+    size = len(pages)
+    rand = randint(0, size - 1)
+    return entry(request, pages[rand])
