@@ -99,3 +99,10 @@ def randomPage(request):
     size = len(pages)
     rand = randint(0, size - 1)
     return entry(request, pages[rand])
+
+
+def home(request):
+    content = markdown(util.get_entry("Wiki Clone"))
+    return render(request, "encyclopedia/Home.html", {
+        "content": content
+    })

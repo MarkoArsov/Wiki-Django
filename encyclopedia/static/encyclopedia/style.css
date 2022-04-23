@@ -38,6 +38,7 @@ textarea {
 }
 
 .navButton {
+    margin-left: 5px;
     margin-top: 20px;
     border: 2px white solid;
     color: white;
@@ -45,6 +46,7 @@ textarea {
 }
 
 .searchForm {
+    margin-left: 5px;
     margin-top: 20px;
     color: white;
 }
@@ -52,6 +54,7 @@ textarea {
 #title {
     color: white;
     margin-top: 5px;
+    margin-left: 5px;
 }
 
 .navButton:hover {
@@ -98,7 +101,6 @@ textarea {
     margin: 20px 20px 0px 40px;
     width: 80%;
 }
-
 
 hr{
     margin-right: 30px;
