@@ -1,6 +1,6 @@
 # Wiki
 
-Wikipedia-like online encyclopedia developed using Python (Django), HTML, CSS and Java Script.
+Wikipedia-like online encyclopedia developed using Python (Django), HTML, CSS and JavaScript.
 
 
 
