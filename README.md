@@ -16,7 +16,3 @@ The [python-markdown2](https://github.com/trentm/python-markdown2) package is us
 - Delete page
 - View history of visited pages
 - Visit random page
-
-
-
-Inspired by Project 1 of CS50’s Web Programming Course.
